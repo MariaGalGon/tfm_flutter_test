@@ -1,28 +1,16 @@
-name: Deploy to GitHub Pages
+name: gh-deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
-        with:
-          java-version: '12.x'
+      - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
+      - uses: bluefireteam/flutter-gh-pages@v7
         with:
-          channel: 'dev'
-      - name: 'Run flutter pub get'
-        run: flutter pub get
-      - name: Enable flutter web
-        run: flutter config --enable-web
-      - name: 'Build Web App'
-        run: flutter build web
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./build/web
+          baseHref: /test_questions_format/
