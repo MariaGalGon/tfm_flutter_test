@@ -16,6 +16,7 @@ class _RadioComponentState extends State<RadioLabelComponent> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(widget._adjLeft),

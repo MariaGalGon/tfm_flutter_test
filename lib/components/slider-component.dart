@@ -16,20 +16,24 @@ class _SliderComponentState extends State<SliderComponent> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
-        Slider(
-            value: widget._currentValue.toDouble(),
-            min: 1,
-            max: 7,
-            divisions: 7,
-            label: "${widget._currentValue}",
-            onChanged: (newValue) {
-              setState(() {
-                widget._currentValue = newValue.toInt();
-              });
-            }),
+        SizedBox(
+          width: 250,
+          child: Slider(
+              value: widget._currentValue.toDouble(),
+              min: 1,
+              max: 7,
+              divisions: 7,
+              label: "${widget._currentValue}",
+              onChanged: (newValue) {
+                setState(() {
+                  widget._currentValue = newValue.toInt();
+                });
+              }),
+        ),
         Text(widget._adjRight, style: TextStyle(fontSize: 14))
       ],
     );

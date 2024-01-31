@@ -41,18 +41,31 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: Center(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        child: Column(children: [
           Text("Seleccione que desea probar", style: TextStyle(fontSize: 14)),
           CustomButton(
-              () => Navigator.pushNamed(context, "/form", arguments: "radio-label"),
+              () => Navigator.pushNamed(context, "/form",
+                  arguments: "radio-label"),
               "Botón A con etiqueta",
               Icons.radio_button_checked),
-          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "radio"),
-              "Botón A", Icons.radio_button_checked),
-          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "box"),
-              "Botón B", Icons.looks_one),
-          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "slider-label"),
-              "Slider con etiqueta", Icons.linear_scale)
+          CustomButton(
+              () => Navigator.pushNamed(context, "/form", arguments: "radio"),
+              "Botón A",
+              Icons.radio_button_checked),
+          CustomButton(
+              () => Navigator.pushNamed(context, "/form", arguments: "box"),
+              "Botón B",
+              Icons.looks_one),
+          CustomButton(
+              () => Navigator.pushNamed(context, "/form",
+                  arguments: "slider-label-A"),
+              "Slider con etiqueta A",
+              Icons.linear_scale),
+          CustomButton(
+              () => Navigator.pushNamed(context, "/form",
+                  arguments: "slider-label-B"),
+              "Slider con etiqueta B",
+              Icons.linear_scale)
         ]),
       ),
     );
