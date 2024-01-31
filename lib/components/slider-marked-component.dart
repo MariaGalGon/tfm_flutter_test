@@ -14,7 +14,7 @@ class SliderMarkedComponent extends StatefulWidget {
 class _SliderMarkedComponentState extends State<SliderMarkedComponent> {
   @override
   Widget build(BuildContext context) {
-    final inactiveColor = Color.fromRGBO(109, 114, 120, 1);
+    final inactiveColor = Color.fromRGBO(223, 226, 235, 50);
     final activeColor = Color.fromRGBO(0, 97, 164, 1);
 
     return SliderTheme(
@@ -22,15 +22,13 @@ class _SliderMarkedComponentState extends State<SliderMarkedComponent> {
             trackHeight: 5,
             thumbShape: RoundSliderThumbShape(
                 disabledThumbRadius: 14, enabledThumbRadius: 14),
-            rangeThumbShape: RoundRangeSliderThumbShape(
-                disabledThumbRadius: 14, enabledThumbRadius: 14),
             // Shape of the divisions
             tickMarkShape: RoundSliderTickMarkShape(tickMarkRadius: 8),
-            inactiveTickMarkColor: inactiveColor,
+            inactiveTickMarkColor: Colors.white,
             inactiveTrackColor: inactiveColor,
             thumbColor: activeColor,
-            activeTickMarkColor: activeColor,
-            activeTrackColor: activeColor),
+            activeTrackColor: inactiveColor,
+            activeTickMarkColor: Colors.white),
         child: buildElements());
   }
 
