@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_questions_format/components/custom-button.dart';
-import 'package:test_questions_format/screens/box-form.dart';
-import 'package:test_questions_format/screens/radio-form.dart';
-import 'package:test_questions_format/screens/slider-form.dart';
+import 'package:test_questions_format/screens/form-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +11,10 @@ final keyNavigator = GlobalKey<NavigatorState>();
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Question format Demo',
+      title: 'Formato cuestionario TFM',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -28,9 +25,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MyHomePage(),
-        '/radio-format': (context) => RadioForm(),
-        '/box-format': (context) => BoxForm(),
-        '/slider-format': (context) => SliderForm()
+        '/form': (context) => FormPage(),
       },
     );
   }
@@ -48,12 +43,16 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Text("Seleccione que desea probar", style: TextStyle(fontSize: 14)),
-          CustomButton(() => Navigator.pushNamed(context, "/radio-format"),
+          CustomButton(
+              () => Navigator.pushNamed(context, "/form", arguments: "radio-label"),
+              "Botón A con etiqueta",
+              Icons.radio_button_checked),
+          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "radio"),
               "Botón A", Icons.radio_button_checked),
-          CustomButton(() => Navigator.pushNamed(context, "/box-format"),
+          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "box"),
               "Botón B", Icons.looks_one),
-          CustomButton(() => Navigator.pushNamed(context, "/slider-format"),
-              "Slider", Icons.linear_scale)
+          CustomButton(() => Navigator.pushNamed(context, "/form", arguments: "slider-label"),
+              "Slider con etiqueta", Icons.linear_scale)
         ]),
       ),
     );

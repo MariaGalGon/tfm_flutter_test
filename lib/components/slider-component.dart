@@ -21,7 +21,7 @@ class _SliderComponentState extends State<SliderComponent> {
         Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
         Slider(
             value: widget._currentValue.toDouble(),
-            min: 0,
+            min: 1,
             max: 7,
             divisions: 7,
             label: "${widget._currentValue}",
