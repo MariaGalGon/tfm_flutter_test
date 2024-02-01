@@ -61,11 +61,11 @@ class FormPage extends StatelessWidget {
 
     switch (type) {
       case "radio-label":
-        appBarTitle = "Botón A con etiqueta";
+        appBarTitle = "Botón circular con etiqueta";
       case "radio":
-        appBarTitle = "Botón A";
+        appBarTitle = "Botón circular";
       case "box":
-        appBarTitle = "Botón B";
+        appBarTitle = "Botón cuadrado";
       case "slider-label-A":
         appBarTitle = "Slider A con etiqueta";
       case "slider-label-B":

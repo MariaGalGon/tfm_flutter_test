@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Formato cuestionario TFM',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       navigatorKey: keyNavigator,
@@ -45,33 +44,37 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Center(
-          child: Column(children: [
-            Text("Seleccione que desea probar", style: TextStyle(fontSize: 14)),
-            CustomButton(
-                () => Navigator.pushNamed(context, "/form",
-                    arguments: "radio-label"),
-                "Botón circular con etiqueta",
-                Icons.radio_button_checked),
-            CustomButton(
-                () => Navigator.pushNamed(context, "/form", arguments: "radio"),
-                "Botón circular",
-                Icons.radio_button_checked),
-            CustomButton(
-                () => Navigator.pushNamed(context, "/form", arguments: "box"),
-                "Botón cuadrado",
-                Icons.looks_one),
-            CustomButton(
-                () => Navigator.pushNamed(context, "/form",
-                    arguments: "slider-label-A"),
-                "Slider A con etiqueta",
-                Icons.linear_scale),
-            CustomButton(
-                () => Navigator.pushNamed(context, "/form",
-                    arguments: "slider-label-B"),
-                "Slider B con etiqueta",
-                Icons.linear_scale)
-          ]),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(children: [
+              Text("Seleccione que desea probar",
+                  style: TextStyle(fontSize: 14)),
+              CustomButton(
+                  () => Navigator.pushNamed(context, "/form",
+                      arguments: "radio-label"),
+                  "Botón circular con etiqueta",
+                  Icons.radio_button_checked),
+              CustomButton(
+                  () =>
+                      Navigator.pushNamed(context, "/form", arguments: "radio"),
+                  "Botón circular",
+                  Icons.radio_button_checked),
+              CustomButton(
+                  () => Navigator.pushNamed(context, "/form", arguments: "box"),
+                  "Botón cuadrado",
+                  Icons.looks_one),
+              CustomButton(
+                  () => Navigator.pushNamed(context, "/form",
+                      arguments: "slider-label-A"),
+                  "Slider A con etiqueta",
+                  Icons.linear_scale),
+              CustomButton(
+                  () => Navigator.pushNamed(context, "/form",
+                      arguments: "slider-label-B"),
+                  "Slider B con etiqueta",
+                  Icons.linear_scale)
+            ]),
+          ),
         ),
       ),
     );
