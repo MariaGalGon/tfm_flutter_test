@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.blue),
-        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),
       navigatorKey: keyNavigator,
@@ -52,15 +51,15 @@ class MyHomePage extends StatelessWidget {
             CustomButton(
                 () => Navigator.pushNamed(context, "/form",
                     arguments: "radio-label"),
-                "Botón A con etiqueta",
+                "Botón circular con etiqueta",
                 Icons.radio_button_checked),
             CustomButton(
                 () => Navigator.pushNamed(context, "/form", arguments: "radio"),
-                "Botón A",
+                "Botón circular",
                 Icons.radio_button_checked),
             CustomButton(
                 () => Navigator.pushNamed(context, "/form", arguments: "box"),
-                "Botón B",
+                "Botón cuadrado",
                 Icons.looks_one),
             CustomButton(
                 () => Navigator.pushNamed(context, "/form",
