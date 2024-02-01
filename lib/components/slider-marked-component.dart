@@ -34,7 +34,6 @@ class _SliderMarkedComponentState extends State<SliderMarkedComponent> {
 
   Widget buildElements() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
@@ -44,7 +43,7 @@ class _SliderMarkedComponentState extends State<SliderMarkedComponent> {
               value: widget._currentValue.toDouble(),
               min: 1,
               max: 7,
-              divisions: 7,
+              divisions: 6,
               label: "${widget._currentValue}",
               onChanged: (newValue) {
                 setState(() {

@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blue, background: Colors.white),
+            seedColor: Colors.blue),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),
       navigatorKey: keyNavigator,
@@ -37,36 +38,42 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Prueba de formato",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28)),
-        backgroundColor: Colors.white,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Colors.white)),
+        backgroundColor: Color.fromRGBO(0, 97, 164, 1),
       ),
-      body: Center(
-        child: Column(children: [
-          Text("Seleccione que desea probar", style: TextStyle(fontSize: 14)),
-          CustomButton(
-              () => Navigator.pushNamed(context, "/form",
-                  arguments: "radio-label"),
-              "Botón A con etiqueta",
-              Icons.radio_button_checked),
-          CustomButton(
-              () => Navigator.pushNamed(context, "/form", arguments: "radio"),
-              "Botón A",
-              Icons.radio_button_checked),
-          CustomButton(
-              () => Navigator.pushNamed(context, "/form", arguments: "box"),
-              "Botón B",
-              Icons.looks_one),
-          CustomButton(
-              () => Navigator.pushNamed(context, "/form",
-                  arguments: "slider-label-A"),
-              "Slider con etiqueta A",
-              Icons.linear_scale),
-          CustomButton(
-              () => Navigator.pushNamed(context, "/form",
-                  arguments: "slider-label-B"),
-              "Slider con etiqueta B",
-              Icons.linear_scale)
-        ]),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Center(
+          child: Column(children: [
+            Text("Seleccione que desea probar", style: TextStyle(fontSize: 14)),
+            CustomButton(
+                () => Navigator.pushNamed(context, "/form",
+                    arguments: "radio-label"),
+                "Botón A con etiqueta",
+                Icons.radio_button_checked),
+            CustomButton(
+                () => Navigator.pushNamed(context, "/form", arguments: "radio"),
+                "Botón A",
+                Icons.radio_button_checked),
+            CustomButton(
+                () => Navigator.pushNamed(context, "/form", arguments: "box"),
+                "Botón B",
+                Icons.looks_one),
+            CustomButton(
+                () => Navigator.pushNamed(context, "/form",
+                    arguments: "slider-label-A"),
+                "Slider A con etiqueta",
+                Icons.linear_scale),
+            CustomButton(
+                () => Navigator.pushNamed(context, "/form",
+                    arguments: "slider-label-B"),
+                "Slider B con etiqueta",
+                Icons.linear_scale)
+          ]),
+        ),
       ),
     );
   }

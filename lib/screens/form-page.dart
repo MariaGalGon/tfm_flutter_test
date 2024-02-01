@@ -10,14 +10,24 @@ class FormPage extends StatelessWidget {
   List<int> selectedAnswers =
       List<int>.generate(adjectives.length, (index) => 0);
   List<int> selectedAnswersSlider =
-      List<int>.generate(adjectives.length, (index) => 1);
+      List<int>.generate(adjectives.length, (index) => 4);
 
   @override
   Widget build(BuildContext context) {
     String questionType = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        title: Text(getTitle(questionType),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Colors.white)),
+        backgroundColor: Color.fromRGBO(0, 97, 164, 1),
+        automaticallyImplyLeading: false,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 10),
         child: ListView.separated(
           shrinkWrap: true,
           itemCount: adjectives.length,
@@ -44,5 +54,24 @@ class FormPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String getTitle(String type) {
+    String appBarTitle = "";
+
+    switch (type) {
+      case "radio-label":
+        appBarTitle = "Botón A con etiqueta";
+      case "radio":
+        appBarTitle = "Botón A";
+      case "box":
+        appBarTitle = "Botón B";
+      case "slider-label-A":
+        appBarTitle = "Slider A con etiqueta";
+      case "slider-label-B":
+        appBarTitle = "Slider B con etiqueta";
+    }
+
+    return appBarTitle;
   }
 }

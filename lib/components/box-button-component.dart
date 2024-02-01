@@ -45,7 +45,6 @@ class _BoxButtonComponentState extends State<BoxButtonComponent> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(widget._adjLeft, style: TextStyle(fontSize: 14)),

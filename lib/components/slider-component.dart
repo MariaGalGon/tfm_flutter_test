@@ -19,30 +19,22 @@ class _SliderComponentState extends State<SliderComponent> {
     final activeColor = Color.fromRGBO(0, 97, 164, 1);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
         SizedBox(
           width: 250,
-          child: SliderTheme(
-            data: SliderThemeData(
-                inactiveTickMarkColor: inactiveColor,
-                inactiveTrackColor: inactiveColor,
-                thumbColor: activeColor,
-                activeTrackColor: inactiveColor),
-            child: Slider(
-                value: widget._currentValue.toDouble(),
-                min: 1,
-                max: 7,
-                divisions: 7,
-                label: "${widget._currentValue}",
-                onChanged: (newValue) {
-                  setState(() {
-                    widget._currentValue = newValue.toInt();
-                  });
-                }),
-          ),
+          child: Slider(
+              value: widget._currentValue.toDouble(),
+              min: 1,
+              max: 7,
+              divisions: 6,
+              label: "${widget._currentValue}",
+              onChanged: (newValue) {
+                setState(() {
+                  widget._currentValue = newValue.toInt();
+                });
+              }),
         ),
         Text(widget._adjRight, style: TextStyle(fontSize: 14))
       ],
