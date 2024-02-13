@@ -26,32 +26,29 @@ class FormPage extends StatelessWidget {
         backgroundColor: Color.fromRGBO(0, 97, 164, 1),
         automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: ListView.separated(
-          shrinkWrap: true,
-          itemCount: adjectives.length,
-          separatorBuilder: (context, index) => Divider(height: 0.5),
-          itemBuilder: (BuildContext context, int index) {
-            switch (questionType) {
-              case "radio-label":
-                return RadioLabelComponent(adjectives[index].adjLeft,
-                    adjectives[index].adjRight, selectedAnswers[index]);
-              case "radio":
-                return RadioComponent(adjectives[index].adjLeft,
-                    adjectives[index].adjRight, selectedAnswers[index]);
-              case "box":
-                return BoxButtonComponent(adjectives[index].adjLeft,
-                    adjectives[index].adjRight, selectedAnswers[index]);
-              case "slider-label-A":
-                return SliderComponent(adjectives[index].adjLeft,
-                    adjectives[index].adjRight, selectedAnswersSlider[index]);
-              case "slider-label-B":
-                return SliderMarkedComponent(adjectives[index].adjLeft,
-                    adjectives[index].adjRight, selectedAnswersSlider[index]);
-            }
-          },
-        ),
+      body: ListView.separated(
+        shrinkWrap: true,
+        itemCount: adjectives.length,
+        separatorBuilder: (context, index) => Divider(height: 0.5),
+        itemBuilder: (BuildContext context, int index) {
+          switch (questionType) {
+            case "radio-label":
+              return RadioLabelComponent(adjectives[index].adjLeft,
+                  adjectives[index].adjRight, selectedAnswers[index]);
+            case "radio":
+              return RadioComponent(adjectives[index].adjLeft,
+                  adjectives[index].adjRight, selectedAnswers[index]);
+            case "box":
+              return BoxButtonComponent(adjectives[index].adjLeft,
+                  adjectives[index].adjRight, selectedAnswers[index]);
+            case "slider-label-A":
+              return SliderComponent(adjectives[index].adjLeft,
+                  adjectives[index].adjRight, selectedAnswersSlider[index]);
+            case "slider-label-B":
+              return SliderMarkedComponent(adjectives[index].adjLeft,
+                  adjectives[index].adjRight, selectedAnswersSlider[index]);
+          }
+        },
       ),
     );
   }
@@ -61,15 +58,15 @@ class FormPage extends StatelessWidget {
 
     switch (type) {
       case "radio-label":
-        appBarTitle = "Botón circular con etiqueta";
+        appBarTitle = "Circular button with label";
       case "radio":
-        appBarTitle = "Botón circular";
+        appBarTitle = "Circular button";
       case "box":
-        appBarTitle = "Botón cuadrado";
+        appBarTitle = "Square button";
       case "slider-label-A":
-        appBarTitle = "Slider A con etiqueta";
+        appBarTitle = "Slider A with label";
       case "slider-label-B":
-        appBarTitle = "Slider B con etiqueta";
+        appBarTitle = "Slider B with label";
     }
 
     return appBarTitle;

@@ -47,9 +47,12 @@ class _BoxButtonComponentState extends State<BoxButtonComponent> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
+        Container(
+            width: 130,
+            child: Text(widget._adjLeft,
+                textAlign: TextAlign.end, style: TextStyle(fontSize: 14))),
         Padding(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(8),
           child: OutlinedButton(
             child: Text("1",
                 style: TextStyle(

@@ -1,15 +1,15 @@
 List<int> options = [1, 2, 3, 4, 5, 6, 7];
 
 List<AdjectivePair> adjectives = [
-  new AdjectivePair("bonito", "feo"),
-  new AdjectivePair("complicado", "fácil"),
-  new AdjectivePair("inseguro", "seguro"),
-  new AdjectivePair("original", "convencional"),
-  new AdjectivePair("mejorable", "perfecto"),
-  new AdjectivePair("rápido", "lento"),
-  new AdjectivePair("sobrecargado", "ordenado"),
-  new AdjectivePair("valioso", "de poco valor"),
-  new AdjectivePair("no recomendable", "recomendable")
+  new AdjectivePair("annoying", "enjoyable"),
+  new AdjectivePair("valuable", "inferior"),
+  new AdjectivePair("boring", "exciting"),
+  new AdjectivePair("fast", "slow"),
+  new AdjectivePair("usual", "leading edge"),
+  new AdjectivePair("inefficient", "efficient"),
+  new AdjectivePair("conservative", "innovative"),
+  new AdjectivePair("organized", "cluttered"),
+  new AdjectivePair("secure", "not secure")
 ]; 
 
 class AdjectivePair {

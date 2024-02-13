@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Formato cuestionario TFM',
+      title: 'Questionnaire format',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Prueba de formato",
+        title: Text("Format test",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 28,
@@ -47,31 +47,31 @@ class MyHomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Center(
             child: Column(children: [
-              Text("Seleccione que desea probar",
+              Text("Choose what you want to try",
                   style: TextStyle(fontSize: 14)),
               CustomButton(
                   () => Navigator.pushNamed(context, "/form",
                       arguments: "radio-label"),
-                  "Botón circular con etiqueta",
+                  "Circular button with label",
                   Icons.radio_button_checked),
               CustomButton(
                   () =>
                       Navigator.pushNamed(context, "/form", arguments: "radio"),
-                  "Botón circular",
+                  "Circular button",
                   Icons.radio_button_checked),
               CustomButton(
                   () => Navigator.pushNamed(context, "/form", arguments: "box"),
-                  "Botón cuadrado",
+                  "Square button",
                   Icons.looks_one),
               CustomButton(
                   () => Navigator.pushNamed(context, "/form",
                       arguments: "slider-label-A"),
-                  "Slider A con etiqueta",
+                  "Slider A with label",
                   Icons.linear_scale),
               CustomButton(
                   () => Navigator.pushNamed(context, "/form",
                       arguments: "slider-label-B"),
-                  "Slider B con etiqueta",
+                  "Slider B with label",
                   Icons.linear_scale)
             ]),
           ),

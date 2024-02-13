@@ -14,10 +14,11 @@ class RadioComponent extends StatefulWidget {
 class _RadioComponentState extends State<RadioComponent> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-      Text(widget._adjLeft),
+    return Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      Container(
+          width: 130,
+          child: Text(widget._adjLeft,
+              textAlign: TextAlign.end, style: TextStyle(fontSize: 14))),
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Material(

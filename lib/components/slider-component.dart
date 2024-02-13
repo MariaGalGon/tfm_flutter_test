@@ -21,7 +21,10 @@ class _SliderComponentState extends State<SliderComponent> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(widget._adjLeft, style: TextStyle(fontSize: 14)),
+        Container(
+            width: 130,
+            child: Text(widget._adjLeft,
+                textAlign: TextAlign.end, style: TextStyle(fontSize: 14))),
         SizedBox(
           width: 250,
           child: Slider(
